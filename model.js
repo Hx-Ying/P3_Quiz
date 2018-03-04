@@ -57,6 +57,7 @@ const save = () => {
 
 //funciones para manejar el array
 exports.count = () => {
+  load();
   quizzes.length;
 }
 
@@ -83,6 +84,7 @@ exports.update = (id, question, answer) => {
 };
 
 exports.getAll = () => {
+  load();
   return JSON.parse(JSON.stringify(quizzes));
 }
 
