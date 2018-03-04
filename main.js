@@ -14,7 +14,7 @@ biglog('CORE Quiz', 'green');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: colorize("quiz >", 'blue'),
+  prompt: colorize("quiz > ", 'blue'),
   completer: (line) => {
     const completions = 'h help add delete edit list test p play credits q quit'.split(" ");
     const hits = completions.filter((c) => c.startsWith(line));
@@ -64,7 +64,7 @@ rl
 
     case 'p':
     case 'play':
-      cmds.playCmd(rl.idPregunta);
+      cmds.playCmd(rl);
       break;
 
     case 'delete':
