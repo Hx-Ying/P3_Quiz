@@ -9,18 +9,18 @@ const colorize = (msq, color) => {
   return msq;
 }
 
-const log = (msq, color) => {
-  console.log(colorize(msq, color));
+const log = (socket, msq, color) => {
+  socket.write(colorize(msq, color)+"\n");
 }
 
 
 
-const errorlog = (emsq) => {
-  console.log(`${colorize("Error", "red")}: ${colorize(colorize(emsq, "red"), "bgYellowBright")}`);
+const errorlog = (socket, msq) => {
+  socket.write(`${colorize("Error", "red")}: ${colorize(colorize(emsq, "red"), "bgYellowBright")}"\n"`);
 }
 
-const biglog = (msq, color) => {
-  log(figlet.textSync(msq, { horizonlLayout: 'full'}), color);
+const biglog = (socket, msq, color) => {
+  log(socket, figlet.textSync(msq, { horizonlLayout: 'full'}), color);
 }
 
 exports = module.exports = {
