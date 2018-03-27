@@ -16,7 +16,7 @@ const log = (socket, msq, color) => {
 
 
 const errorlog = (socket, msq) => {
-  socket.write(`${colorize("Error", "red")}: ${colorize(colorize(emsq, "red"), "bgYellowBright")}"\n"`);
+  socket.write(`${colorize("Error", "red")}: ${colorize(colorize(msq, "red"), "bgYellowBright")}"\n"`);
 }
 
 const biglog = (socket, msq, color) => {
